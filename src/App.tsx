@@ -121,7 +121,7 @@ const Carousel = () => {
     <div className="relative w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
       <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${current * 100}%)` }}>
         {resultImages.map((src, i) => (
-          <img key={i} src={src} alt={`Resultado ${i+1}`} loading="lazy" decoding="async" className="w-full h-[320px] object-cover flex-shrink-0" />
+          <img key={i} src={src} alt={`Resultado ${i+1}`} loading={i === 0 ? "eager" : "lazy"} decoding="async" className="w-full h-[320px] object-cover flex-shrink-0" />
         ))}
       </div>
       <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition">
@@ -278,15 +278,17 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState({ hours: 1, minutes: 31, seconds: 3 });
 
   useEffect(() => {
-    // Delay VSL script loading to prioritize page rendering on 4G mobile
-    const timer = setTimeout(() => {
-      const script = document.createElement('script');
-      script.src = "https://app.litevideo.net/p.js";
-      script.async = true;
-      document.head.appendChild(script);
-    }, 1500);
-    
-    return () => clearTimeout(timer);
+    // Preconnect to video domain for faster DNS/TLS resolution
+    const preconnect = document.createElement('link');
+    preconnect.rel = 'preconnect';
+    preconnect.href = 'https://app.litevideo.net';
+    document.head.appendChild(preconnect);
+
+    // Load VSL script immediately without delay
+    const script = document.createElement('script');
+    script.src = "https://app.litevideo.net/p.js";
+    script.async = true;
+    document.head.appendChild(script);
   }, []);
 
   useEffect(() => {
@@ -365,14 +367,14 @@ export default function App() {
             <div className="flex gap-4 px-2">
               {invitationImages.map((src, i) => (
                 <div key={i} className="shrink-0 w-40 h-56 rounded-2xl overflow-hidden shadow-md">
-                  <img src={src} alt={`Convite ${i+1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src={src} alt={`Convite ${i+1}`} decoding="async" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
             <div className="flex gap-4 px-2">
               {invitationImages.map((src, i) => (
                 <div key={`dup-${i}`} className="shrink-0 w-40 h-56 rounded-2xl overflow-hidden shadow-md">
-                  <img src={src} alt={`Convite ${i+1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <img src={src} alt={`Convite ${i+1}`} decoding="async" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
