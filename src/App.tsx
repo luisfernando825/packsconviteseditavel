@@ -223,7 +223,7 @@ const PricingCard = () => (
       </ul>
     </div>
     
-    <Button href="https://pay.lowify.com.br/checkout?product_id=Huj0p8" className="mb-6 shadow-[0_8px_30px_rgb(34,197,94,0.4)]">
+    <Button href="https://pay.wiapy.com/L_2Cr_wmSf" className="mb-6 shadow-[0_8px_30px_rgb(34,197,94,0.4)]">
       QUERO MEU PLANO 🔥
     </Button>
     

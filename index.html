@@ -11,6 +11,36 @@
     
     <!-- Load VSL script immediately in parallel with React -->
     <script src="https://app.litevideo.net/p.js" async></script>
+
+    <!-- UTMify Pixel -->
+    <script>
+      // Patch JSON.stringify to prevent UTMify from crashing on React elements
+      const originalStringify = JSON.stringify;
+      JSON.stringify = function(value, replacer, space) {
+        try {
+          return originalStringify(value, replacer, space);
+        } catch (e) {
+          if (e.message.includes('circular structure') || e.message.includes('Circular')) {
+            const cache = new Set();
+            return originalStringify(value, (key, val) => {
+              if (typeof val === 'object' && val !== null) {
+                if (cache.has(val)) return '[Circular]';
+                cache.add(val);
+              }
+              return typeof replacer === 'function' ? replacer(key, val) : val;
+            }, space);
+          }
+          throw e;
+        }
+      };
+
+      window.pixelId = "69c31367528f4fba7bae32e8";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
   </head>
   <body>
     <div id="root"></div>
