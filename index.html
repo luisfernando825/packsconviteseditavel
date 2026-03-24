@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title>My Google AI Studio App</title>
+    
+    <!-- Preconnect to video domain for faster DNS/TLS resolution -->
+    <link rel="preconnect" href="https://app.litevideo.net" />
+    
+    <!-- Load VSL script immediately in parallel with React -->
+    <script src="https://app.litevideo.net/p.js" async></script>
   </head>
   <body>
     <div id="root"></div>
