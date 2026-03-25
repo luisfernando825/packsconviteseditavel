@@ -1,28 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
-    <title>My Google AI Studio App</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>+700 Convites Digitais Editáveis | Ganhe Dinheiro em Casa</title>
+    <meta name="description" content="Acesse +700 convites digitais editáveis no Canva Gratuito. Venda convites e lucre de casa com o celular. Acesso imediato por apenas R$13,97." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
     <!-- Preconnect to video domain for faster DNS/TLS resolution -->
     <link rel="preconnect" href="https://app.litevideo.net" />
-    
-    <!-- Load VSL script immediately in parallel with React -->
+
+    <!-- Load VSL script immediately in parallel -->
     <script src="https://app.litevideo.net/p.js" async></script>
 
     <!-- UTMify Pixel -->
     <script>
-      // Patch JSON.stringify to prevent UTMify from crashing on React elements
-      const originalStringify = JSON.stringify;
+      const _origStringify = JSON.stringify;
       JSON.stringify = function(value, replacer, space) {
-        try {
-          return originalStringify(value, replacer, space);
-        } catch (e) {
-          if (e.message.includes('circular structure') || e.message.includes('Circular')) {
+        try { return _origStringify(value, replacer, space); }
+        catch (e) {
+          if (e.message && (e.message.includes('circular') || e.message.includes('Circular'))) {
             const cache = new Set();
-            return originalStringify(value, (key, val) => {
+            return _origStringify(value, (key, val) => {
               if (typeof val === 'object' && val !== null) {
                 if (cache.has(val)) return '[Circular]';
                 cache.add(val);
@@ -33,7 +37,6 @@
           throw e;
         }
       };
-
       window.pixelId = "69c31367528f4fba7bae32e8";
       var a = document.createElement("script");
       a.setAttribute("async", "");
@@ -41,10 +44,10 @@
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
       document.head.appendChild(a);
     </script>
+    <script type="module" crossorigin src="/assets/index-BayDivcg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CuY7IZ9B.css">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
