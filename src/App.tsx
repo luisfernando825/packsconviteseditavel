@@ -27,19 +27,19 @@ const testimonials = [
 ];
 
 const invitationImages = [
-  "https://i.imgur.com/u0eqvWj.jpg",
-  "https://i.imgur.com/j9f9JcA.jpg",
-  "https://i.imgur.com/5HYhCyl.jpg",
-  "https://i.imgur.com/vsvy8gU.jpg",
-  "https://i.imgur.com/JlbLwe8.jpg",
-  "https://i.imgur.com/eOmDqPl.jpg"
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/u0eqvWj.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/j9f9JcA.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/5HYhCyl.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/vsvy8gU.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/JlbLwe8.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/eOmDqPl.jpg"
 ];
 
 const resultImages = [
-  "https://i.imgur.com/89tiBQY.jpg",
-  "https://i.imgur.com/MXT9wmW.jpg",
-  "https://i.imgur.com/GAAq4Me.jpg",
-  "https://i.imgur.com/O58RAEy.jpg"
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/89tiBQY.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/MXT9wmW.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/GAAq4Me.jpg",
+  "https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/O58RAEy.jpg"
 ];
 
 const FloatingNotification = () => {
@@ -434,28 +434,28 @@ export default function App() {
         <p className="text-center text-gray-600 font-medium mb-12">Tudo o que você vai receber</p>
         
         <BonusCard 
-          image="https://i.imgur.com/Vfyzavp.png"
+          image="https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/Vfyzavp.png"
           title="🎁+108 Filtros Premium para Convites"
           subtitle="Você vai ter acesso:"
           description={"✔️Aplicação rápida em 1 clique\n✔️Visual mais profissional\n✔️Filtros modernos e prontos\n✔️Sem precisar de experiência"}
           highlight="Transforme qualquer convite em algo profissional em segundos!"
         />
         <BonusCard 
-          image="https://i.imgur.com/0T6H6sn.png"
+          image="https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/0T6H6sn.png"
           title="🎁+Mockups Profissionais de Convites"
           subtitle="Você vai ter acesso:"
           description={"✔️Visualização realista\n✔️Apresentação profissional\n✔️Ideal para vender ou mostrar\n✔️Valorização do seu trabalho"}
           highlight="Seus convites vão parecer feitos por designer profissional!"
         />
         <BonusCard 
-          image="https://i.imgur.com/aV4YkLV.png"
+          image="https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/aV4YkLV.png"
           title="🎁+15 Mil Elementos Scrapbook"
           subtitle="Você vai ter acesso:"
           description={"✔️Elementos prontos para usar\n✔️Vários estilos e temas\n✔️Liberdade total na criação\n✔️Nunca faltar ideias"}
           highlight="Crie convites únicos e personalizados sem limites!"
         />
         <BonusCard 
-          image="https://i.imgur.com/eM6qwis.png"
+          image="https://external-content.duckduckgo.com/iu/?u=https://i.imgur.com/eM6qwis.png"
           title="🎁+450 Kits Digitais Completos"
           subtitle="Você vai ter acesso:"
           description={"✔️Kits prontos organizados\n✔️Edição simples e rápida\n✔️Convites em poucos minutos\n✔️Economia de tempo total"}
