@@ -12,34 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- UTMify Pixel -->
-    <script>
-      const _origStringify = JSON.stringify;
-      JSON.stringify = function(value, replacer, space) {
-        try { return _origStringify(value, replacer, space); }
-        catch (e) {
-          if (e.message && (e.message.includes('circular') || e.message.includes('Circular'))) {
-            const cache = new Set();
-            return _origStringify(value, (key, val) => {
-              if (typeof val === 'object' && val !== null) {
-                if (cache.has(val)) return '[Circular]';
-                cache.add(val);
-              }
-              return typeof replacer === 'function' ? replacer(key, val) : val;
-            }, space);
-          }
-          throw e;
-        }
-      };
-      window.pixelId = "69c31367528f4fba7bae32e8";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
-    </script>
-    <script type="module" crossorigin src="/assets/index-1RgQCOKX.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CviEwCBd.css">
+    <script type="module" crossorigin src="/assets/index-BOtoMQAf.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CsaZa7GO.css">
   </head>
   <body>
     <div id="root"></div>
