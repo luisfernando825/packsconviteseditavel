@@ -1,46 +1,50 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>500 Convites de Aniversário Infantil Editáveis no Canva</title>
-    <meta name="description" content="500 convites digitais infantis editáveis no Canva Gratuito. Altere textos, cores e fotos pelo celular. Acesso imediato." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>My Google AI Studio App</title>
+    
+    <!-- Preconnect to video domain for faster DNS/TLS resolution -->
+    <link rel="preconnect" href="https://app.litevideo.net" />
+    
+    <!-- Load VSL script immediately in parallel with React -->
+    <script src="https://app.litevideo.net/p.js" async></script>
 
-    <!-- DNS Prefetch + Preconnect para imagens externas -->
-    <link rel="dns-prefetch" href="//i.imgur.com" />
-    <link rel="preconnect" href="https://i.imgur.com" crossorigin />
+    <!-- UTMify Pixel -->
+    <script>
+      // Patch JSON.stringify to prevent UTMify from crashing on React elements
+      const originalStringify = JSON.stringify;
+      JSON.stringify = function(value, replacer, space) {
+        try {
+          return originalStringify(value, replacer, space);
+        } catch (e) {
+          if (e.message.includes('circular structure') || e.message.includes('Circular')) {
+            const cache = new Set();
+            return originalStringify(value, (key, val) => {
+              if (typeof val === 'object' && val !== null) {
+                if (cache.has(val)) return '[Circular]';
+                cache.add(val);
+              }
+              return typeof replacer === 'function' ? replacer(key, val) : val;
+            }, space);
+          }
+          throw e;
+        }
+      };
 
-    <!-- Preload da imagem hero (LCP) -->
-    <link rel="preload" as="image" href="https://i.imgur.com/bPt4Axp.png" fetchpriority="high" />
-
-    <!-- Google Fonts — não bloqueante -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" /></noscript>
-
-    <!-- Fonte fallback enquanto a web font carrega -->
-    <style>
-      body { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
-      :root { --font-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif; }
-    </style>
-
-    <script>   window.pixelId = "69c1d7465f60cfea9f71f615";   var a = document.createElement("script");   a.setAttribute("async", "");   a.setAttribute("defer", "");   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");   document.head.appendChild(a); </script>
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
-    <script type="module" crossorigin src="/assets/index-2ysjLdSh.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/icons-k2re-lqs.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-BB_vbK78.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BzAyxp8Y.css">
+      window.pixelId = "69c31367528f4fba7bae32e8";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+
